@@ -192,7 +192,7 @@ end
 
 % Plot the spectrogram
 figure;
-imagesc(1/200:1/200:300/200, FREQ, amp_trialAvg.');
+imagesc(1/200:1/200:300/200, frequency, amplitude.');
 set(gca, 'YDir', 'normal');
 title('Time-Frequency Spectrogram');
 xlabel('Time (s)');
