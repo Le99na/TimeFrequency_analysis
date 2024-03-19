@@ -18,8 +18,8 @@ classdef NNC_path
         
         DataRoot_GAD_healthy_original = 'C:\Users\magcam\Documents\GAD\healthy\DATA_Raw\'
         DataRoot_GAD_healthy_processed = 'C:\Users\magcam\Documents\GAD\healthy\DATA_preprocessed\'
-        DataRoot_GAD_anxious_original = 'C:\Users\magcam\Documents\GAD\patients\DATA_raw\'
-        DataRoot_GAD_anxious_processed = 'C:\Users\magcam\Documents\GAD\patients\DATA_preprocessed\'
+        DataRoot_GAD_anxious_original = 'D:\EEGdata_processed\'
+        DataRoot_GAD_anxious_processed = 'D:\TF_analysis\'
 
         DataRoot_MBA_original = 'D:\emotion_regulation\raw\movie\Movie_EEG\'
         DataRoot_MBA_processed = 'D:\emotion_regulation\raw\movie\Movie_EEG\processed\'
