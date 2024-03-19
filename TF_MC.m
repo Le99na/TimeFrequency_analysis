@@ -70,7 +70,7 @@ for groupIdx = 1:numGroups
     longerThan3 = fls{cellfun(@(x) length(x) > 3,fls)}
     path_in2 = [path_in1 longerThan3 '\']
 
-    path_out = [root_proc GROUPS{groupIdx} '\']
+    path_out = [root_proc GROUPS{groupIdx} '_nc3\']
 
     if exist(path_out,'dir')~=7
         mkdir(path_out);
@@ -208,31 +208,31 @@ for groupIdx = 1:numGroups
     EEG.amp_avg_cor = amp_baselineCorrected_cor
     EEG.amp_avg_icor = amp_baselineCorrected_icor
 
-    EEG = pop_saveset(EEG, 'filename', [EEG.filename(1:-4), '_avg_amp.set'], 'filepath', path_out);
+    EEG = pop_saveset(EEG, 'filename', [EEG.filename(1:end-4), '_avg_amp.set'], 'filepath', path_out);
 
     % Plot the spectrogram
     figure;
-    imagesc(1/200:1/200:300/200, FREQ, amp_baselineCorrected_cor.');
+    imagesc(1/200:1/200:300/200, FREQ(1:40), amp_baselineCorrected_cor.');
     set(gca, 'YDir', 'normal');
-    title('Time-Frequency Spectrogram');
+    title([EEG.filename(1:6) ' time-frequency spectrogram cor']);
     xlabel('Time (s)');
     ylabel('Frequency (Hz)');
     colorbar;
     % Save the figure as a JPEG
-    output_filename = [path_out EEG.filename(1:4) 'time_frequency_spectrogram_cor.jpg'];  % Specify the output filename
+    output_filename = [path_out EEG.filename(1:6) '_time_frequency_spectrogram_cor.jpg'];  % Specify the output filename
     saveas(gcf, output_filename, 'jpeg');
     close all
 
     % Plot the spectrogram
     figure;
-    imagesc(1/200:1/200:300/200, FREQ, amp_baselineCorrected_icor.');
+    imagesc(1/200:1/200:300/200, FREQ(1:40), amp_baselineCorrected_icor.');
     set(gca, 'YDir', 'normal');
-    title('Time-Frequency Spectrogram');
+    title([EEG.filename(1:6) ' time-frequency spectrogram icor']);
     xlabel('Time (s)');
     ylabel('Frequency (Hz)');
     colorbar;
     % Save the figure as a JPEG
-    output_filename = [path_out EEG.filename(1:4) '_time_frequency_spectrogram_icor.jpg'];  % Specify the output filename
+    output_filename = [path_out EEG.filename(1:6) '_time_frequency_spectrogram_icor.jpg'];  % Specify the output filename
     saveas(gcf, output_filename, 'jpeg');
     close all
     
