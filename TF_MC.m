@@ -277,6 +277,16 @@ colorbar;
 output_filename = [root_proc 'ptp86_difference_time_frequency_spectrogram_icor.jpg'];  % Specify the output filename
 saveas(gcf, output_filename, 'jpeg');
 close all
+figure;
+imagesc(1/200:1/200:300/200, FREQ(1:40), diff_110_cor.');
+set(gca, 'YDir', 'normal');
+title('ptp110 difference time-frequency spectrogram cor');
+xlabel('Time (s)');
+ylabel('Frequency (Hz)');
+colorbar;
+% Save the figure as a JPEG
+output_filename = [root_proc 'ptp110_difference_time_frequency_spectrogram_cor.jpg'];  % Specify the output filename
+saveas(gcf, output_filename, 'jpeg');
 
 figure;
 imagesc(1/200:1/200:300/200, FREQ(1:40), diff_86_cor.');
@@ -286,7 +296,10 @@ xlabel('Time (s)');
 ylabel('Frequency (Hz)');
 colorbar;
 % Save the figure as a JPEG
-output_filename = [root_proc 'ptp86_difference_time_frequency_spectrogram_cor.jpg'];  % Specify the output filename
+output_filename = [root_proc 'ptp86_difference_time_frequency_spectrogram_cor.jpg'];  % Specify the output filenam
+figure;
+imagesc(1/200:1/200:300/200, FREQ(1:40), diff_110_cor.');
+set(gca, 'YDir', 'normal');e
 saveas(gcf, output_filename, 'jpeg');
 close all
 
