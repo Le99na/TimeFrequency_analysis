@@ -17,11 +17,9 @@ classdef NNC_path
         rainbow2 = [NNC_path.pathToToolbox 'rainbowspectra/plotutils/']; 
         
         DataRoot_GAD_healthy_original = '/home/mc/Documents/GAD/healthy/DATA_Raw/'
-        DataRoot_GAD_healthy_processed = '/home/Documents/GAD/healthy/DATA_preprocessed/'
-        DataRoot_GAD_anxious_original = 'D:\EEGdata_processed\'
+        DataRoot_GAD_healthy_processed = '/home/mc/Documents/GAD/healthy/DATA_preprocessed/'
+        DataRoot_GAD_anxious_original = '/home/mc/EEGdata_processed\'
         DataRoot_GAD_anxious_processed = 'D:\TF_analysis\'
-        DataRoot_GAD_TF_orig = '/home/mc/Documents/GAD_TF/test_subset/'
-        DataRoot_GAD_TF_processed = '/home/mc/Documents/GAD_TF/test_subset/results/'
 
         DataRoot_MBA_original = 'D:\emotion_regulation\raw\movie\Movie_EEG\'
         DataRoot_MBA_processed = 'D:\emotion_regulation\raw\movie\Movie_EEG\processed\'
