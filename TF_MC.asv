@@ -72,12 +72,12 @@ mirrorData_FLAG = 1;
 eeglab
 
 %% Go through each participant
-for groupIdx = 1:length(fileList)
+for groupIdx = 1:numGroups
     % Name of the group which is used in folder organization
-    % path_in1 = [root_raw GROUPS{groupIdx} '\EEG\']
-    % fls = {dir(path_in1).name}
-    % longerThan3 = fls{cellfun(@(x) length(x) > 3,fls)}
-    % path_in2 = [path_in1 longerThan3 '\']
+    path_in1 = [root_raw GROUPS{groupIdx} '\EEG\']
+    fls = {dir(path_in1).name}
+    longerThan3 = fls{cellfun(@(x) length(x) > 3,fls)}
+    path_in2 = [path_in1 longerThan3 '\']
 
     path_out = [root_proc GROUPS{groupIdx} '_nc3_params\']
 
@@ -86,11 +86,11 @@ for groupIdx = 1:length(fileList)
     end
     
     %read-in relevant file
-    % fls_all = {dir(path_in2).name}
-    % fl_rel_idx = find(contains(fls_all,'ERN_vals.set'))
-    % fl_rel = fls_all{fl_rel_idx}
+    fls_all = {dir(path_in2).name}
+    fl_rel_idx = find(contains(fls_all,'ERN_vals.set'))
+    fl_rel = fls_all{fl_rel_idx}
 
-    EEG = pop_loadset(fileList{groupIdx})
+    EEG = pop_loadset([path_in2 fl_rel])
 
     answ = {EEG.event.type}
     idx_ep_cor = []
