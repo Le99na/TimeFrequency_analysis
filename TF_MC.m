@@ -226,6 +226,8 @@ for groupIdx = 1:length(fileList)
     title([EEG.filename(1:6) ' time-frequency spectrogram cor']);
     xlabel('Time (s)');
     ylabel('Frequency (Hz)');
+    caxis([-5 5])
+    colormap(flipud(brewermap([],'RdBu')));
     colorbar;
     % Save the figure as a JPEG
     output_filename = [path_out EEG.filename(1:6) '_time_frequency_spectrogram_cor.jpg'];  % Specify the output filename
